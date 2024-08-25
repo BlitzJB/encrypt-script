@@ -10,11 +10,18 @@ if [ $? -ne 0 ]; then
 fi
 
 # Prompt for password
-read -s -p "Enter password for encryption/decryption: " password
+read -s -p "Enter password for encryption/decryption: " password < /dev/tty
 echo
 
 # Prompt for mode
-read -p "Enter 'e' for encryption or 'd' for decryption: " mode
+while true; do
+    read -p "Enter 'e' for encryption or 'd' for decryption: " mode < /dev/tty
+    if [[ $mode == "e" || $mode == "d" ]]; then
+        break
+    else
+        echo "Invalid input. Please enter 'e' or 'd'."
+    fi
+done
 
 # Run the Python script
 python3 encrypt.py "$password" "$mode"
