@@ -41,8 +41,8 @@ This project implements a secure file encryption and decryption tool using Pytho
 ### Steps
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/secure-file-encryption.git
-   cd secure-file-encryption
+   git clone https://github.com/blitzjb/encrypt-script.git
+   cd encrypt-script
    ```
 
 2. Set up a virtual environment (optional but recommended):
